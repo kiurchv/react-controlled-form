@@ -1,0 +1,68 @@
+{
+  "name": "react-controlled-form",
+  "version": "0.0.0",
+  "description": "Lightweight controlled form component for React",
+  "keywords": [
+    "react-controlled-form",
+    "form",
+    "controlled",
+    "react"
+  ],
+  "homepage": "https://github.com/kiurchv/react-controlled-form",
+  "bugs": "https://github.com/kiurchv/react-controlled-form/issues",
+  "license": "MIT",
+  "author": "Myroslav Kiurchev <kiurchv@gmail.com> (https://github.com/kiurchv/)",
+  "files": [
+    "lib",
+    "es",
+    "dist"
+  ],
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "scripts": {
+    "build:commonjs": "BABEL_ENV=commonjs babel src --out-dir lib",
+    "build:es": "BABEL_ENV=es babel src --out-dir es",
+    "build:umd": "BABEL_ENV=umd webpack",
+    "build": "npm run build:commonjs && npm run build:es && npm run build:umd",
+    "clean": "rimraf lib es dist coverage",
+    "prepublish": "npm run clean && npm run build",
+    "test": "jest",
+    "test:watch": "npm run test -- --watch --notify",
+    "coverage": "jest --coverage",
+    "coverage:watch": "npm run coverage -- --watch --notify"
+  },
+  "repository": "https://github.com/kiurchv/react-controlled-form",
+  "dependencies": {
+    "babel-plugin-lodash": "^3.2.11",
+    "hoist-non-react-statics": "^1.2.0",
+    "lodash": "^4.0.0",
+    "recompose": "^0.22.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "babel-preset-env": "^1.2.2",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "enzyme": "^2.8.0",
+    "jest": "^19.0.2",
+    "react-addons-test-utils": "^15.4.2",
+    "rimraf": "^2.6.1",
+    "unminified-webpack-plugin": "^1.2.0",
+    "webpack": "^2.3.2",
+    "webpack-umd-external": "^1.0.2"
+  },
+  "peerDependencies": {
+    "react": "^0.14.0 || ^15.0.0",
+    "react-dom": "^0.14.0 || ^15.0.0"
+  },
+  "optionalDependencies": {
+    "immutable": "^3.0.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/index.js"
+    ]
+  }
+}

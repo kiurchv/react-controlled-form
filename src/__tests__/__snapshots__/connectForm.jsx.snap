@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`connectForm should add form object to the child context when value and onChange props set 1`] = `
+Object {
+  "form": Object {
+    "getErrors": [Function],
+    "getValue": [Function],
+    "setValue": [Function],
+  },
+}
+`;
