@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { shallow, mount } from "enzyme";
+import * as plainAdapter from "react-controlled-form-adapter-plain";
+import createBasicValidator from "react-controlled-form-validator-basic";
 
 import connectForm from "../connectForm";
 
@@ -8,7 +10,11 @@ describe("connectForm", () => {
     return <form {...props} />;
   }
 
-  const ConnectedForm = connectForm()(Form);
+  const ConnectedForm = connectForm(
+    plainAdapter,
+    plainAdapter,
+    createBasicValidator
+  )(Form);
 
   const emptyValue = {};
   const emptyOnChange = () => {};

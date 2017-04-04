@@ -1,6 +1,6 @@
-import * as plainAdapter from "../../adapters/plain";
+import * as plainAdapter from "react-controlled-form-adapter-plain";
 
-import createValidator from "../basic";
+import createValidator from "../index";
 
 describe("validator", () => {
   function validatePresence(value) {

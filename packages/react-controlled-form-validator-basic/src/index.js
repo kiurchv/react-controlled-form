@@ -1,3 +1,5 @@
+import "core-js";
+
 export default function createValidator(valueAdapter, errorAdapter) {
   function validator(formValidations, formValue) {
     return Object.entries(formValidations).reduce(

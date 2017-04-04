@@ -1,0 +1,29 @@
+{
+  "name": "react-controlled-form-validator-basic",
+  "version": "1.0.0-beta.1",
+  "description": "",
+  "keywords": [
+    "react-controlled-form",
+    "react-controlled-form-validator"
+  ],
+  "homepage": "https://github.com/kiurchv/react-controlled-form",
+  "bugs": "https://github.com/kiurchv/react-controlled-form/issues",
+  "license": "MIT",
+  "author": "Myroslav Kiurchev <kiurchv@gmail.com> (https://github.com/kiurchv/)",
+  "files": [
+    "lib",
+    "es",
+    "dist"
+  ],
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "repository": "https://github.com/kiurchv/react-controlled-form",
+  "scripts": {
+    "build": "../../scripts/build",
+    "clean": "../../scripts/clean",
+    "prepublish": "npm run clean && npm run build"
+  },
+  "dependencies": {
+    "core-js": "^2.4.1"
+  }
+}

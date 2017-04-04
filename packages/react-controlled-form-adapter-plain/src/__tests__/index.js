@@ -1,4 +1,4 @@
-import { get, set } from "../plain";
+import { get, set } from "../index";
 
 const formValue = { a: "b" };
 

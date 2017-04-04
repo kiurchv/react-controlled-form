@@ -6,14 +6,15 @@
         "uglify": true
       },
       "modules": false,
-      "loose": true
+      "loose": true,
+      "useBuiltIns": true
     }],
     "stage-0",
     "react"
   ],
   "ignore": "__tests__",
   "env": {
-    "commonjs": {
+    "cjs": {
       "plugins": [
         ["transform-es2015-modules-commonjs", { "loose": true }],
         ["lodash", { "id": ["lodash", "recompose"] }]

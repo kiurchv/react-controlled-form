@@ -1,0 +1,45 @@
+{
+  "name": "react-controlled-form",
+  "version": "1.0.0-beta.1",
+  "description": "Lightweight controlled form component for React",
+  "keywords": [
+    "react-controlled-form",
+    "form",
+    "controlled",
+    "react"
+  ],
+  "homepage": "https://github.com/kiurchv/react-controlled-form",
+  "bugs": "https://github.com/kiurchv/react-controlled-form/issues",
+  "license": "MIT",
+  "author": "Myroslav Kiurchev <kiurchv@gmail.com> (https://github.com/kiurchv/)",
+  "files": [
+    "lib",
+    "es",
+    "dist"
+  ],
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "repository": "https://github.com/kiurchv/react-controlled-form",
+  "scripts": {
+    "build": "../../scripts/build",
+    "clean": "../../scripts/clean",
+    "prepublish": "npm run clean && npm run build"
+  },
+  "dependencies": {
+    "hoist-non-react-statics": "^1.2.0",
+    "lodash": "^4.0.0",
+    "recompose": "^0.22.0"
+  },
+  "devDependencies": {
+    "enzyme": "^2.8.0",
+    "react": "^15.0.0",
+    "react-dom": "^15.0.0",
+    "react-addons-test-utils": "^15.4.2",
+    "react-controlled-form-adapter-plain": "^1.0.0-beta.1",
+    "react-controlled-form-validator-basic": "^1.0.0-beta.1"
+  },
+  "peerDependencies": {
+    "react": "^0.14.0 || ^15.0.0",
+    "react-dom": "^0.14.0 || ^15.0.0"
+  }
+}

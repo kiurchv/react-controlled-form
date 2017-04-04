@@ -1,12 +1,7 @@
 import { Component, PropTypes, createElement } from "react";
-import { Map } from "immutable";
 import { wrapDisplayName } from "recompose";
 import { debounce } from "lodash";
 import hoistStatics from "hoist-non-react-statics";
-
-import * as plainAdapter from "./adapters/plain";
-import * as immutableAdapter from "./adapters/immutable";
-import createBasicValidator from "./validators/basic";
 
 const DEFAULT_OPTIONS = {
   validateOnChange: true,
@@ -15,17 +10,9 @@ const DEFAULT_OPTIONS = {
 };
 
 export default function connectForm(
-  valueAdapter = ({ value }) => (
-    Map.isMap(value)
-    ? immutableAdapter
-    : plainAdapter
-  ),
-  errorAdapter = ({ errors }) => (
-    Map.isMap(errors)
-    ? immutableAdapter
-    : plainAdapter
-  ),
-  createValidator = createBasicValidator,
+  valueAdapter,
+  errorAdapter,
+  createValidator,
   options
 ) {
   options = { ...DEFAULT_OPTIONS, ...options };

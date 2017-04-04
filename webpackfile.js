@@ -1,14 +1,17 @@
 const path = require("path");
-const umdExternal = require("webpack-umd-external");
+const upperCamelCase = require("uppercamelcase");
 const { optimize: { UglifyJsPlugin } } = require("webpack");
 const UnminifiedWebpackPlugin = require("unminified-webpack-plugin");
+
+const cwd = process.cwd();
+const basename = path.basename(cwd);
 
 module.exports = {
   entry: "./src",
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "react-controlled-form.min.js",
-    library: "ReactControlledForm",
+    path: path.resolve(cwd, "dist"),
+    filename: `${basename}.min.js`,
+    library: upperCamelCase(basename),
     libraryTarget: "umd"
   },
   module: {
@@ -16,12 +19,6 @@ module.exports = {
       { test: /\.js$/, loader: "babel-loader", exclude: /node_modules/ }
     ]
   },
-  externals: umdExternal({
-    react: "React",
-    recompose: "Recompose",
-    lodash: "_",
-    immutable: "Immutable"
-  }),
   plugins: [
     new UglifyJsPlugin(),
     new UnminifiedWebpackPlugin()

@@ -1,6 +1,6 @@
 import { Map, fromJS } from "immutable";
 
-import { get, set } from "../immutable";
+import { get, set } from "../index";
 
 const formValue = fromJS({
   a: {

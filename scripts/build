@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+
+const exec = require("../utils/exec");
+
+// CommonJS
+exec("babel src --out-dir lib", { BABEL_ENV: "cjs" });
+// ES Modules
+exec("babel src --out-dir es", { BABEL_ENV: "es" });
+// UMD
+exec("webpack");
